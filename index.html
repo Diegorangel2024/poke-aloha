@@ -5,46 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seja Bem-vindo</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        button {
+            background-color: #ffffff; /* Fundo branco do botão */
+            color: #000000; /* Letra preta */
+            border: 2px solid #00796b; /* Borda verde-água */
+            border-radius: 25px; /* Bordas arredondadas */
+            padding: 10px 20px; /* Espaçamento interno */
+            font-size: 18px; /* Tamanho da fonte */
+            cursor: pointer; /* Muda o cursor ao passar sobre o botão */
+            transition: background-color 0.3s, color 0.3s; /* Transição suave para efeito hover */
+            margin-top: 20px; /* Margem acima do botão */
+        }
+
+        button:hover {
+            background-color: #00796b; /* Cor de fundo ao passar o mouse */
+            color: #ffffff; /* Cor da letra ao passar o mouse */
+        }
+    </style>
     <script>
-        function mostrarInstrucoes() {
-            document.getElementById("downloadInstructions").style.display = "block";
+        function confirmarDownload() {
+            var pdfLink = "https://raw.githubusercontent.com/Diegorangel2024/poke-aloha/main/Cardápio%20de%20Poke%20restaurante%20moderno%20verde%20e%20bege%20(2)%20(22).pdf";
+            if (confirm("Você será redirecionado para o download do PDF. Deseja continuar?")) {
+                window.location.href = pdfLink;
+            }
         }
         
-        function confirmarDownload() {
-            // Link direto para o PDF
-            var pdfLink = "https://raw.githubusercontent.com/Diegorangel2024/poke-aloha/main/Cardápio%20de%20Poke%20restaurante%20moderno%20verde%20e%20bege%20(2)%20(22).pdf"; // Link do seu PDF
-            window.open(pdfLink, '_self'); // Tente abrir na mesma aba
-        }
-
-        function verCardapio() {
-            // Link direto para o PDF
-            var pdfLink = "https://raw.githubusercontent.com/Diegorangel2024/poke-aloha/main/Cardápio%20de%20Poke%20restaurante%20moderno%20verde%20e%20bege%20(2)%20(22).pdf"; // Link do seu PDF
-            window.open(pdfLink, '_self'); // Tente abrir na mesma aba
-        }
-
         function detectarDispositivo() {
             return /iPad|iPhone|iPod/.test(navigator.userAgent);
         }
 
         window.onload = function() {
             if (detectarDispositivo()) {
-                document.getElementById("botaoDownload").style.display = "none"; // Esconder o botão de download para iPhone
-                document.getElementById("botaoVerCardapio").style.display = "block"; // Mostrar o botão de ver cardápio
-                mostrarInstrucoes(); // Mostrar instruções
+                // Redireciona para o PDF diretamente para usuários de iPhone
+                window.location.href = "https://raw.githubusercontent.com/Diegorangel2024/poke-aloha/main/Cardápio%20de%20Poke%20restaurante%20moderno%20verde%20e%20bege%20(2)%20(22).pdf";
+            } else {
+                // Para usuários de Android ou outros dispositivos, mostra a página inicial
+                document.getElementById("content").style.display = "block"; // Exibe o conteúdo para outros dispositivos
             }
         };
     </script>
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="content" style="display: none;">
         <!-- Logo e Boas-Vindas -->
         <header>
             <img src="https://raw.githubusercontent.com/Diegorangel2024/poke-aloha/main/download.png" alt="Poke Aloha" class="logo">
             <h1> Seja Bem-vindo ao Aloha Poke. Aproveite os pratos mais refrescantes!🥰</h1>
             <p>Experimente o melhor do poke no Paraguai. Pedido fácil, entrega rápida e sabor inesquecível!</p>
-            <button id="botaoDownload" onclick="confirmarDownload()">Baixar PDF</button>
-            <button id="botaoVerCardapio" style="display:none;" onclick="verCardapio()">Ver Cardápio</button>
-            <p id="downloadInstructions" style="display:none; color: red;">Para usuários de iPhone, use o botão "Ver Cardápio" para visualizar. Para usuários de Android, o download deve iniciar automaticamente.</p>
+            <button onclick="confirmarDownload()">Baixar PDF</button>
+            <p id="downloadInstructions" style="display:none; color: red;">Para usuários de Android, o download deve iniciar automaticamente.</p>
         </header>
     </div>
 </body>
