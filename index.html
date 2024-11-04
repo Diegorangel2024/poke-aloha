@@ -14,7 +14,8 @@
             // Link direto para o PDF do Dropbox
             var pdfLink = "https://www.dropbox.com/s/ocxtkovj63hc1kzxm05cg4qfl/de-Poke-restaurante-moderno-verde-e-bege-2-21.pdf?dl=1"; // Link modificado para download direto
             if (confirm("Você será redirecionado para o download do PDF. Deseja continuar?")) {
-                window.location.href = pdfLink;
+                // Em vez de usar window.location.href, abra o link em uma nova aba para evitar problemas de download
+                window.open(pdfLink, '_blank');
             }
         }
         
