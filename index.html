@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="style.css">
     <script>
         window.onload = function() {
-            // Redireciona automaticamente para o link do PDF para download
-            window.location.href = "https://drive.google.com/uc?export=download&id=1mQezXzOoROYQUgLYbQYp-Ns4RYnEEGfQ";
+            if (confirm("Você será redirecionado para o download do PDF. Deseja continuar?")) {
+                window.location.href = "https://drive.google.com/uc?export=download&id=1mQezXzOoROYQUgLYbQYp-Ns4RYnEEGfQ";
+            }
         };
     </script>
 </head>
@@ -23,4 +24,5 @@
     </div>
 </body>
 </html>
+
 
