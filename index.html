@@ -37,8 +37,8 @@
 
         window.onload = function() {
             if (detectarDispositivo()) {
-                // Redireciona para o PDF diretamente para usuários de iPhone
-                window.location.href = "https://raw.githubusercontent.com/Diegorangel2024/poke-aloha/main/Cardápio%20de%20Poke%20restaurante%20moderno%20verde%20e%20bege%20(2)%20(22).pdf";
+                // Para usuários de iPhone, exibe o botão "Ver Cardápio"
+                document.getElementById("verCardapio").style.display = "block"; // Exibe o botão
             } else {
                 // Para usuários de Android ou outros dispositivos, mostra a página inicial
                 document.getElementById("content").style.display = "block"; // Exibe o conteúdo para outros dispositivos
@@ -55,6 +55,14 @@
             <p>Experimente o melhor do poke no Paraguai. Pedido fácil, entrega rápida e sabor inesquecível!</p>
             <button onclick="confirmarDownload()">Baixar PDF</button>
             <p id="downloadInstructions" style="display:none; color: red;">Para usuários de Android, o download deve iniciar automaticamente.</p>
+        </header>
+    </div>
+    
+    <div id="verCardapio" style="display: none;">
+        <header>
+            <h1> Seja Bem-vindo ao Aloha Poke. Aproveite os pratos mais refrescantes!🥰</h1>
+            <p>Experimente o melhor do poke no Paraguai. Pedido fácil, entrega rápida e sabor inesquecível!</p>
+            <button onclick="window.location.href='https://raw.githubusercontent.com/Diegorangel2024/poke-aloha/main/Cardápio%20de%20Poke%20restaurante%20moderno%20verde%20e%20bege%20(2)%20(22).pdf'">Ver Cardápio</button>
         </header>
     </div>
 </body>
