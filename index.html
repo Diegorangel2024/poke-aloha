@@ -28,12 +28,15 @@
             return /iPad|iPhone|iPod/.test(navigator.userAgent);
         }
 
-        window.onload = function() {
+        function redirecionarParaCardapio() {
             if (detectarDispositivo()) {
-                // Para usuários de iPhone, redireciona diretamente para o PDF
+                // Usuários de iPhone serão redirecionados para o site alternativo
+                window.location.href = "https://diegorangel2024.github.io/imagens.github.io/";
+            } else {
+                // Outros usuários serão redirecionados para o PDF padrão
                 window.location.href = "https://raw.githubusercontent.com/Diegorangel2024/poke-aloha/main/Cardápio%20de%20Poke%20restaurante%20moderno%20verde%20e%20bege%20(2)%20(22).pdf";
             }
-        };
+        }
     </script>
 </head>
 <body>
@@ -43,7 +46,8 @@
             <img src="https://raw.githubusercontent.com/Diegorangel2024/poke-aloha/main/download.png" alt="Poke Aloha" class="logo">
             <h1> Seja Bem-vindo ao Aloha Poke. Aproveite os pratos mais refrescantes!🥰</h1>
             <p>Experimente o melhor do poke no Paraguai. Pedido fácil, entrega rápida e sabor inesquecível!</p>
-            <button onclick="window.location.href='https://raw.githubusercontent.com/Diegorangel2024/poke-aloha/main/Cardápio%20de%20Poke%20restaurante%20moderno%20verde%20e%20bege%20(2)%20(22).pdf'">Ver Cardápio</button>
+            <!-- O botão chama a função redirecionarParaCardapio ao ser clicado -->
+            <button onclick="redirecionarParaCardapio()">Ver Cardápio</button>
         </header>
     </div>
 </body>
