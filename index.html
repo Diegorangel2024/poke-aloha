@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seja Bem-vindo</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        #pdfViewer {
+            display: none;
+            width: 100%;
+            height: 600px; /* Altura do iframe */
+            border: none; /* Remove borda do iframe */
+        }
+    </style>
     <script>
         function mostrarInstrucoes() {
             document.getElementById("downloadInstructions").style.display = "block";
@@ -19,9 +27,11 @@
         }
 
         function verCardapio() {
-            // Link para visualizar o cardápio em um visualizador online
-            var cardapioLink = "https://docs.google.com/viewer?url=https://raw.githubusercontent.com/Diegorangel2024/poke-aloha/main/Cardápio%20de%20Poke%20restaurante%20moderno%20verde%20e%20bege%20(2)%20(22).pdf&embedded=true"; // Link do visualizador
-            window.open(cardapioLink, '_blank'); // Abre o PDF em uma nova aba para visualização
+            // Link do PDF para visualização
+            var pdfLink = "https://raw.githubusercontent.com/Diegorangel2024/poke-aloha/main/Cardápio%20de%20Poke%20restaurante%20moderno%20verde%20e%20bege%20(2)%20(22).pdf";
+            var viewer = document.getElementById("pdfViewer");
+            viewer.src = pdfLink; // Define a fonte do iframe para o PDF
+            viewer.style.display = "block"; // Exibe o iframe
         }
 
         function detectarDispositivo() {
@@ -47,6 +57,7 @@
             <button id="botaoDownload" onclick="confirmarDownload()">Baixar PDF</button>
             <button id="botaoVerCardapio" style="display:none;" onclick="verCardapio()">Ver Cardápio</button>
             <p id="downloadInstructions" style="display:none; color: red;">Para usuários de iPhone, use o botão "Ver Cardápio" para visualizar. Para usuários de Android, o download deve iniciar automaticamente.</p>
+            <iframe id="pdfViewer" src="" frameborder="0"></iframe> <!-- Iframe para visualização do PDF -->
         </header>
     </div>
 </body>
