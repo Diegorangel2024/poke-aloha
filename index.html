@@ -6,19 +6,25 @@
     <title>Seja Bem-vindo</title>
     <link rel="stylesheet" href="style.css">
     <script>
+        function mostrarInstrucoes() {
+            document.getElementById("downloadInstructions").style.display = "block";
+        }
+        
         function confirmarDownload() {
+            // Link direto para o PDF
+            var pdfLink = "https://drive.google.com/uc?export=download&id=1mQezXzOoROYQUgLYbQYp-Ns4RYnEEGfQ";
             if (confirm("Você será redirecionado para o download do PDF. Deseja continuar?")) {
-                window.location.href = "https://drive.google.com/uc?export=download&id=1mQezXzOoROYQUgLYbQYp-Ns4RYnEEGfQ";
+                window.location.href = pdfLink;
             }
         }
-
+        
         function detectarDispositivo() {
-            return /iPad|iPhone|iPod/.test(navigator.userAgent) || /Android/.test(navigator.userAgent);
+            return /iPad|iPhone|iPod/.test(navigator.userAgent);
         }
 
         window.onload = function() {
             if (detectarDispositivo()) {
-                document.getElementById("downloadInstructions").style.display = "block";
+                mostrarInstrucoes();
             }
         };
     </script>
