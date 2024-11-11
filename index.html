@@ -1,58 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seja Bem-vindo</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        button {
-            background-color: #ffffff; /* Fundo branco do botão */
-            color: #000000; /* Letra preta */
-            border: 2px solid #00796b; /* Borda verde-água */
-            border-radius: 25px; /* Bordas arredondadas */
-            padding: 10px 20px; /* Espaçamento interno */
-            font-size: 18px; /* Tamanho da fonte */
-            cursor: pointer; /* Muda o cursor ao passar sobre o botão */
-            transition: background-color 0.3s, color 0.3s; /* Transição suave para efeito hover */
-            margin-top: 20px; /* Margem acima do botão */
-        }
-
-        button:hover {
-            background-color: #00796b; /* Cor de fundo ao passar o mouse */
-            color: #ffffff; /* Cor da letra ao passar o mouse */
-        }
-    </style>
-    <script>
-        function detectarDispositivo() {
-            return /iPad|iPhone|iPod/.test(navigator.userAgent);
-        }
-
-        function redirecionarParaCardapio() {
-            if (detectarDispositivo()) {
-                // Usuários de iPhone serão redirecionados para o site alternativo
-                window.location.href = "https://diegorangel2024.github.io/imagens.github.io/";
-            } else {
-                // Outros usuários serão redirecionados para o PDF padrão
-                window.location.href = "https://raw.githubusercontent.com/Diegorangel2024/poke-aloha/main/Card%C3%A1pio%20de%20Poke%20restaurante%20moderno%20verde%20e%20bege%20(3).pdf";
-            }
-        }
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seja Bem-vindo</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    button {
+      background-color: #ffffff;
+      color: #000000;
+      border: 2px solid #00796b;
+      border-radius: 25px;
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+      margin-top: 20px;
+    }
+    button:hover {
+      background-color: #00796b;
+      color: #ffffff;
+    }
+  </style>
+  <script>
+    function detectarDispositivo() {
+      return /iPad|iPhone|iPod/.test(navigator.userAgent);
+    }
+    function redirecionarParaCardapio() {
+      if (detectarDispositivo()) {
+        window.location.href = "https://diegorangel2024.github.io/imagens.github.io/";
+      } else {
+        window.location.href = "https://raw.githubusercontent.com/Diegorangel2024/poke-aloha/main/Card%C3%A1pio%20de%20Poke%20restaurante%20moderno%20verde%20e%20bege%20(3).pdf";
+      }
+    }
+  </script>
 </head>
 <body>
-    <div class="container">
-        <!-- Logo e Boas-Vindas -->
-        <header>
-            <img src="https://raw.githubusercontent.com/Diegorangel2024/poke-aloha/main/download.png" alt="Poke Aloha" class="logo">
-            <h1> Bienvenido a Aloha Poke. ¡Disfruta de los platos más refrescantes!🥰</h1>
-            <p>Experimenta lo mejor del poke en Paraguay. ¡Pedidos fáciles, entrega rápida y sabor inolvidable!</p>
-            <!-- Botão para ver o cardápio -->
-            <button onclick="redirecionarParaCardapio()">Ver menú</button>
-            <!-- Botão para página de produtos -->
-            <button onclick="window.location.href='https://aloha-poke-3.ola.click/products'">Productos</button>
-            <!-- Botão para WhatsApp -->
-            <button onclick="window.location.href='https://wa.me/5521996481418?text=Hola,%20me%20gustaria%20hacer%20un%20pedido'">Hacer pedido por WhatsApp</button>
-        </header>
-    </div>
+  <div class="container">
+    <header>
+      <img src="https://raw.githubusercontent.com/Diegorangel2024/poke-aloha/main/download.png" alt="Poke Aloha" class="logo">
+      <h1>Bem-vindo a Aloha Poke. ¡Disfrute dos pratos mais refrescantes!🥰</h1>
+      <p>Experimente o melhor do poke no Paraguai. ¡Pedidos fáceis, entrega rápida e sabor inolvidável!</p>
+      
+      <!-- Botão para ver o cardápio -->
+      <button onclick="redirecionarParaCardapio()">Ver menu</button>
+      
+      <!-- Botão renomeado para "Produtos" -->
+      <button onclick="window.location.href='https://aloha-poke-3.ola.click/products'">Novo Nome do Botão</button>
+      
+      <!-- Botão para WhatsApp -->
+      <button onclick="window.location.href='https://wa.me/5521996481418?text=Olá,%20me%20gustaria%20hacer%20un%20pedido'">WhatsApp</button>
+      
+    </header>
+  </div>
 </body>
 </html>
